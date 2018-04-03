@@ -1,0 +1,74 @@
+{
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "pm",
+    "patterns": [
+        {
+            "include": "#comments"
+        },{
+            "include": "#keywords"
+        },{
+            "include": "#strings"
+        },{
+            "include": "#variable"
+        }
+    ],
+    "repository": {
+        "keywords": {
+            "patterns": [{
+                "name": "keyword.control.pm",
+                "match": "\\b(bool|C|ceil|const|ctmc|double|dtmc|endinit|endmodule|endrewards|endsystem|F|false|floor|formula|G|global|I|init|int|label|max|mdp|min|module|nondeterministic|P|Pmin|Pmax|prob|probabilistic|R|rate|rewards|Rmin|Rmax|S|stochastic|system|true|U|X| player| endplayer)\\b"
+            }]
+        },
+        "strings": {
+            "name": "string.quoted.double.pm",
+            "begin": "\"",
+            "end": "\"",
+            "patterns": [
+                {
+                    "name": "constant.character.escape.pm",
+                    "match": "\\\\."
+                }
+            ]
+        },
+        "variable":{
+            "patterns": [
+                {
+                    "name":"variable.name.pm",
+                    "match":"\\b([a-zA-z\\_][a-zA-Z0-9_]*)\\b"
+                },{
+                    "name":"constant.numeric.pm",
+                    "match": "[-+]?[0-9]*\\.?[0-9]+"
+                },{
+                    "name":"keyword.operator.new.pm",
+                    "match": "==|=|->|<->|&&|<<|>>|!=|!|\\|\\||,|\\.\\.|\\+|-|\\*|/|::|:|>|<|\\%|\\^|&"
+                },{
+                    "name":"entity.name.class.pm",
+                    "match":"\\[|\\]"
+                },{
+                    "name":"entity.name.section.pm",
+                    "match": "{|}"
+                },{
+                    "name":"entity.name.type.pm",
+                    "match": "[()]"
+                },{
+                    "name":"keyword.other.pm",
+                    "match":"[']"
+                }
+            ]
+        },
+        "comments": {
+            "patterns": [
+                {
+                    "match": "(//).*",
+                    "name": "comment.line.fsp"
+                },
+                {
+                    "begin": "/\\*",
+                    "end": "\\*/",
+                    "name": "comment.block.fsp"
+                }
+            ]
+        }
+    },
+    "scopeName": "source.pm"
+}

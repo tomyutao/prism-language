@@ -1,0 +1,26 @@
+{
+    "name": "prism-language",
+    "displayName": "PRISM-language",
+    "description": "Language highlightener for PRISM",
+    "version": "0.0.1",
+    "publisher": "taoyu",
+    "engines": {
+        "vscode": "^1.18.0"
+    },
+    "categories": [
+        "Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "pm",
+            "aliases": ["pm", "pm"],
+            "extensions": [".pm"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "pm",
+            "scopeName": "source.pm",
+            "path": "./syntaxes/pm.tmLanguage.json"
+        }]
+    }
+}
